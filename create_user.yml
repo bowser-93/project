@@ -13,7 +13,11 @@
 
     - name: creation d'utilisateurs
       user:
-        name: free
+        name: { { item } }
         uid: 28005
+        gid: 28005
         create_home: yes
         shell: /bin/bash/
+      loop:
+        - free
+        - first
