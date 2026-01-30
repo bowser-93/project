@@ -15,12 +15,12 @@
       yum:
         name: mysql-server
         state: latest
-      when: inventory_hostname in ["ms"]
+      when: inventory_hostname in groups["ms"]
 
     - name: stop des service
       service:
         name: "{{ item }}"
         state: stopped
-      loop:
+      with_items:
         - apache
         - mysql-server
