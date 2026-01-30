@@ -1,6 +1,6 @@
 ---
 - name: install gpg
-  hosts: ms_mn_0
+  hosts: {{ host_group }}
   become: yes
   become_method: sudo
   tasks:
