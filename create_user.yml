@@ -1,0 +1,20 @@
+- name: Creation d'utilisateur
+  hosts: "{{ hosts_group }}"
+  become: yes
+  become_method: 'sesu'
+  become_flags: '-'
+  tasks:
+
+    - name: creation du groupe Free
+      group:
+        name: free
+        state: present
+        gid: 28005
+
+    - name: creation d'utilisateurs
+      user:
+        name: free
+        uid: 28005
+        gid: 28005
+        create_home: yes
+        shell: /bin/bash/
