@@ -7,5 +7,5 @@
     - name: install gpg
       yum:
         name: gpg
-        state: latests
+        state: latest
 
