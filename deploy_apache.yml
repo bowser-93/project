@@ -7,14 +7,14 @@
     - name: install apache
       apt:
         name: apache2
-        state: stable
+        state: latest
       when: inventory_hostname in groups["prez"]
 
 
     - name: install mysql
       yum:
         name: mysql-server.x86_64
-        state: stable
+        state: latest
       when: inventory_hostname in groups["ms"]
 
     - name: stop des service
