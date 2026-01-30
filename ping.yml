@@ -10,6 +10,6 @@
 
     - name: install gpg
       yum:
-        name: gpg
+        name: python3-gpg.x86_64
         state: latest
 
