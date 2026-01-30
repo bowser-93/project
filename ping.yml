@@ -1,6 +1,6 @@
 ---
 - name: install gpg
-  hosts: qual
+  hosts: ms_mn_0
   become: yes
   become_method: sudo
   tasks:
