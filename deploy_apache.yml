@@ -16,3 +16,11 @@
         name: mysql-server
         state: latest
       when: inventory_hostname in ["ms"]
+
+    - name: stop des service
+      service:
+        name: "{{ item }}"
+        state: stopped
+      loop:
+        - apache
+        - mysql-server
