@@ -4,6 +4,10 @@
   become: yes
   become_method: sudo
   tasks:
+    - name: mise a jour du repos
+      shell:
+        cmd: "yum update -y"
+
     - name: install gpg
       yum:
         name: gpg
