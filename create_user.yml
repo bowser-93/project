@@ -15,6 +15,5 @@
       user:
         name: free
         uid: 28005
-        gid: 28005
         create_home: yes
         shell: /bin/bash/
