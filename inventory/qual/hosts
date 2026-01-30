@@ -1,4 +1,4 @@
-mn_0:
+all:
   children:
     ms_mn_0:
       hosts:
