@@ -1,7 +1,7 @@
 - name: Creation d'utilisateur
   hosts: "{{ hosts_group }}"
   become: yes
-  become_method: 'sesu'
+  become_method: 'sudo'
   become_flags: '-'
   tasks:
 
