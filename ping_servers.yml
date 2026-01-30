@@ -1,0 +1,10 @@
+---
+- name: install gpg
+  hosts: "{{ host_group }}"
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Ping {{ ansible_hostname }}
+      shell: ping -n 4 "{{ hosts }}"
+
+
