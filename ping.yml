@@ -6,10 +6,10 @@
   tasks:
     - name: mise a jour du repos
       shell:
-        cmd: "yum update -y"
+        cmd: "apt update -y"
 
     - name: install gpg
-      yum:
+      apt:
         name: python3-gpg.x86_64
         state: latest
 
