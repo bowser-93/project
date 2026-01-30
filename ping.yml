@@ -1,0 +1,11 @@
+---
+- name: install gpg
+  hosts: qual
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: install gpg
+      yum:
+        name: gpg
+        state: latests
+
