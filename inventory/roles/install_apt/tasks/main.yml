@@ -13,3 +13,4 @@
       - "{{ sereur_app }}"
       - "{{ dbserver }}"
     state: stopped
+  when: inventory_hostname in groups["prez"]
