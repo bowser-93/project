@@ -1,0 +1,3 @@
+serveur_http: apache2
+sereur_app: tomcat
+dbserver: mysql-server

@@ -1,0 +1,9 @@
+---
+- name: Install service
+  hosts: "{{ host_group }}"
+  become: yes
+  become_method: "sudo"
+  become_flags: '-'
+  include_role:
+    name: install_apt
+

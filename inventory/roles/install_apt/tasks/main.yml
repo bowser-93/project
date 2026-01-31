@@ -1,0 +1,15 @@
+- name: deploy some service
+  apt:
+    name:
+      - "{{ serveur_http }}"
+      - "{{ sereur_app }}"
+      - "{{ dbserver }}"
+    state: latest
+  when: inventory_hostname in groups["prez"]
+
+- name:
+    services:
+      - "{{ serveur_http }}"
+      - "{{ sereur_app }}"
+      - "{{ dbserver }}"
+    state: stopped
