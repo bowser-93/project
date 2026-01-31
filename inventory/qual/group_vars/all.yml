@@ -1,3 +1,4 @@
-serveur_http: apache2
-serveur_app: tomcat
-dbserver: mysql-server
+vars:
+  serveur_http: apache2
+  serveur_app: tomcat
+  dbserver: mysql-server
