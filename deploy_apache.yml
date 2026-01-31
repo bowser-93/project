@@ -6,21 +6,25 @@
   tasks:
     - name: install apache
       apt:
-        name: apache2
+        name:
+          - "{{ serveur_http }}"
+          - "{{ serveur_app }}"
+          - "{{ dbserver }}"
         state: latest
       when: inventory_hostname in groups["prez"]
 
 
-    - name: install mysql
-      yum:
-        name: mysql-server.x86_64
-        state: latest
-      when: inventory_hostname in groups["ms"]
+#    - name: install mysql
+#      yum:
+#        name: mysql-server.x86_64
+#        state: latest
+#      when: inventory_hostname in groups["ms"]
 
     - name: stop des service
       service:
         name: "{{ item }}"
         state: stopped
       with_items:
-        - apache2
-        - mysql-server
+        - "{{ serveur_http }}"
+        - "{{ serveur_app }}"
+        - "{{ dbserver }}"
