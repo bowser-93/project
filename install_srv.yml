@@ -4,7 +4,7 @@
   become: yes
   become_method: "sudo"
   become_flags: '-'
-  include_role:
-    name: install_apt
+  roles:
+    - role: install_apt
 
 
