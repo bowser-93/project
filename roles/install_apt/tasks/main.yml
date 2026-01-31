@@ -1,6 +1,6 @@
 - name: deploy some service
   tasks:
-    name: install services "{{ serveur_http }}" "{{ sereur_app }}" "{{ dbserver }}"
+  - name: install services "{{ serveur_http }}" "{{ sereur_app }}" "{{ dbserver }}"
     apt:
       name:
         - "{{ serveur_http }}"
@@ -9,12 +9,12 @@
       state: latest
   when: inventory_hostname in groups["prez"]
 
-    name:
-      services:
+  - name: stop service
+    service:
       - "{{ serveur_http }}"
       - "{{ sereur_app }}"
       - "{{ dbserver }}"
-      state: stopped
+    state: stopped
     when: inventory_hostname in groups["prez"]
 #- name:
 #    apt:
