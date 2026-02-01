@@ -11,8 +11,8 @@
 - name: stop service
   service:
     name:
-      - default-mysql-server
-      - tomcat11
+      - mysql-server
+      - tomcat
       - apache2
     state: stopped
   when: inventory_hostname in groups["prez"]
