@@ -3,7 +3,7 @@
   apt:
     name:
       - default-mysql-server
-      - tomcat
+      - tomcat11
       - apache2
     state: latest
   when: inventory_hostname in groups["prez"]
@@ -12,7 +12,7 @@
   service:
     name:
       - default-mysql-server
-      - tomcat
+      - tomcat11
       - apache2
     state: stopped
   when: inventory_hostname in groups["prez"]
