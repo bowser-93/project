@@ -9,14 +9,14 @@
       state: latest
   when: inventory_hostname in groups["prez"]
 
-  - name: stop service
-    service:
-      name:
-        - "{{ serveur_http }}"
-        - "{{ sereur_app }}"
-        - "{{ dbserver }}"
-      state: stopped
-    when: inventory_hostname in groups["prez"]
+#  - name: stop service
+#    service:
+#      name:
+#        - "{{ serveur_http }}"
+#        - "{{ sereur_app }}"
+#        - "{{ dbserver }}"
+#      state: stopped
+#    when: inventory_hostname in groups["prez"]
 #- name:
 #    apt:
 #      name: upgrade
