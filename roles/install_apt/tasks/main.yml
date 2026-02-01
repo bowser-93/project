@@ -1,5 +1,7 @@
 ---
 - name: deploy some servers
+  vars_files:
+    - vars/main.yml
   apt:
     name:
       - "{{ serveur_http }}"
@@ -7,9 +9,6 @@
       - "{{ dbserver }}"
     state: latest
   when: inventory_hostname in groups["prez"]
-
-  vars_files:
-    - vars/main.yml
 
 - name: stop service
   service:
