@@ -6,7 +6,7 @@
       - "{{ sereur_app }}"
       - "{{ dbserver }}"
     state: latest
-  when: inventory_hostname in group["prez"]
+  when: inventory_hostname in groups["prez"]
 
 - name: stop service
   service:
@@ -15,4 +15,4 @@
       - "{{ sereur_app }}"
       - "{{ dbserver }}"
     state: stopped
-  when: inventory_hostname in group["prez"]
+  when: inventory_hostname in groups["prez"]
