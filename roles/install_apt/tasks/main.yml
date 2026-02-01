@@ -2,7 +2,7 @@
 - name: deploy some servers
   apt:
     name:
-      - mysql-server
+      - default-mysql-server
       - tomcat
       - apache2
     state: latest
@@ -11,7 +11,7 @@
 - name: stop service
   service:
     name:
-      - mysql-server
+      - default-mysql-server
       - tomcat
       - apache2
     state: stopped
