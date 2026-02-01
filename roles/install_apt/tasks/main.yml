@@ -1,20 +1,18 @@
 ---
 - name: deploy some servers
-  vars_files:
-    - vars/all.yml
   apt:
     name:
-      - "{{ serveur_http }}"
-      - "{{ sereur_app }}"
-      - "{{ dbserver }}"
+      - mysql-server
+      - tomcat
+      - apache2
     state: latest
   when: inventory_hostname in groups["prez"]
 
 - name: stop service
   service:
     name:
-      - "{{ serveur_http }}"
-      - "{{ sereur_app }}"
-      - "{{ dbserver }}"
+      - mysql-server
+      - tomcat
+      - apache2
     state: stopped
   when: inventory_hostname in groups["prez"]
