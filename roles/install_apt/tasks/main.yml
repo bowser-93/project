@@ -11,10 +11,11 @@
 
   - name: stop service
     service:
-      - "{{ serveur_http }}"
-      - "{{ sereur_app }}"
-      - "{{ dbserver }}"
-    state: stopped
+      name:
+        - "{{ serveur_http }}"
+        - "{{ sereur_app }}"
+        - "{{ dbserver }}"
+      state: stopped
     when: inventory_hostname in groups["prez"]
 #- name:
 #    apt:
